@@ -1,34 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style/style.css" />
     <title>{{.Title}}</title>
-</head>
-<body>
-    <h1>{{.Title}}</h1>
-    <h2>{{.Description}}</h2>
-    <form action="/ascii-art" method="post">
+  </head>
+  <body>
+    <div class="box">
+      <h1>{{.Title}}</h1>
+      <h2>{{.Description}}</h2>
+      <form action="/ascii-art" method="post">
         <label for="text">type here</label>
         <textarea name="text" id="text" cols="50" rows="6 required"></textarea>
-        <span style="color:red;">{{.Warning}}</span>
+        <span style="color: red">{{.Warning}}</span>
         <label for="font">select font</label>
         <select name="select" id="font">
-            <option value="standard">standard</option>
-            <option value="shadow">shadow</option>
-            <option value="thinkertoy">thinkertoy</option>
+          <option value="standard">standard</option>
+          <option value="shadow">shadow</option>
+          <option value="thinkertoy">thinkertoy</option>
         </select>
         <button type="submit">submit</button>
-    </form>
+      </form>
+    </div>
 
     <div class="container">
-        <h2>Output</h2>
-        <div class="content">
-            <pre>{{.Content}}</pre>
-        </div>
+      <h3>Output</h3>
+      <div class="content">
+        <pre id="preContent">{{.Content}}</pre>
+      </div>
+      <button id="copyButton">Copy Content</button>
     </div>
-</body>
+  </body>
+    <script>
+        document.getElementById("copyButton").addEventListener("click", function() {
+    const preContent = document.getElementById("preContent").innerText;
+
+    // Copy the content of the pre tag to the clipboard
+    navigator.clipboard.writeText(preContent).then(function() {
+        // Optionally, provide feedback to the user
+        alert("Copied the content: " + preContent);
+    }, function(err) {
+        alert("Failed to copy content: " + err);
+    });
+});
+
+    </script>
 
 </html>
