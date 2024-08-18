@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/style/style.css" />
-    <title>{{.Title}}</title>
+
+    <!-- flaticon cdn -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+        <title>{{.Title}}</title>
   </head>
   <body>
     <div class="box">
@@ -12,15 +15,17 @@
       <h2>{{.Description}}</h2>
       <form action="/ascii-art" method="post">
         <label for="text">type here</label>
-        <textarea name="text" id="text" cols="50" rows="6 required"></textarea>
-        <span style="color: red">{{.Warning}}</span>
+        <textarea name="text" id="text" cols="50" rows="6" required></textarea>
+        <span class="Error">{{.Warning}}</span>
         <label for="font">select font</label>
         <select name="select" id="font">
           <option value="standard">standard</option>
           <option value="shadow">shadow</option>
           <option value="thinkertoy">thinkertoy</option>
         </select>
-        <button type="submit">submit</button>
+        <button type="submit">Generate
+          <span class="material-symbols-outlined">brush</span>
+        </button>
       </form>
     </div>
 
@@ -29,22 +34,12 @@
       <div class="content">
         <pre id="preContent">{{.Content}}</pre>
       </div>
-      <button id="copyButton">Copy Content</button>
+      <a href="/download">
+        <button id="Download">
+          Download
+          <span class="material-symbols-outlined">download</span>
+        </button>
+      </a>
     </div>
   </body>
-    <script>
-        document.getElementById("copyButton").addEventListener("click", function() {
-    const preContent = document.getElementById("preContent").innerText;
-
-    // Copy the content of the pre tag to the clipboard
-    navigator.clipboard.writeText(preContent).then(function() {
-        // Optionally, provide feedback to the user
-        alert("Copied the content: " + preContent);
-    }, function(err) {
-        alert("Failed to copy content: " + err);
-    });
-});
-
-    </script>
-
 </html>

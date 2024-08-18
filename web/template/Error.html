@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style/style.css" />
+    <title>{{ .Status}}</title>
+  </head>
+  <body>
+    <div class="StatusError">
+      <div class="Status">
+        <span>{{.Code}}</span>
+        {{.Status}}
+      </div>
+      <div class="BackHome">
+        <p>Sorry, the page you are looking for could not be found.</p>
+        <a href="/">Go to Home</a>
+      </div>
+    </div>
+  </body>
+</html>

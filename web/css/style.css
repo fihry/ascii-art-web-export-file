@@ -33,22 +33,26 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding: 10px;
     background-color: rgb(0, 0, 0);
     background-image: url(./—Pngtree—background\ biru\ tua\ polos\ dan_1739974.png);
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
+    gap: 10px;
 }
 
 h1 , h2 {
     color: #000000;
-    font-weight: 700;
+    font-weight: 900;
     font-size: 2rem;
     margin: 10px 0;
 }
-.box{
+h2 {
+    font-size: 1.5rem;
+}
+.box,.container{
     width: 50%;
     height: 100%;
     display: flex;
@@ -84,8 +88,13 @@ textarea {
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #ccc;
-    border-radius: 12px;
+    border-radius: 8px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.Error {
+    color: #ff0f0f88;
+    font-size: 1rem;
+    font-weight: 700;
 }
 
 select {
@@ -94,35 +103,42 @@ select {
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #ccc;
-    border-radius: 12px;
+    border-radius: 8px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
-
+form a{
+    width: 100%;
+    text-decoration: none;
+    align-self: center;
+    color: #000000;
+    font-weight: 700;
+    font-size: 1rem;
+    margin: 10px 0;
+}
 form button {
     width: 50%;
     max-width: 100%;
     padding: 10px;
     margin: 10px 0;
     border: none;
-    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+    border-radius: 8px;
     background-color: #000000;
     color: #fff;
     cursor: pointer;
 }
-
-.container {
+form a button {
     width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    margin-top: 20px;
-    background-color: #ffffff3b;
-    backdrop-filter: blur(18px);
-    border-radius: 12px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
+ 
+form button:hover {
+    background-color: #000000;
+    color: #05ffc1;
+}
+
 h3{
     color: #000000;
     font-weight: 700;
@@ -133,7 +149,6 @@ h3{
 .content {
     width: 100%;
     max-height: 300px;
-    background-color: #0000001a;
     backdrop-filter: blur(8px);
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -144,4 +159,113 @@ h3{
 pre {
     color : rgb(255, 255, 255);
     padding: 10px;
+}
+
+.container a button {
+   width:100%;
+    max-width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+    border-radius: 8px;
+    border:1px solid #000000;
+    color: #ffffff;
+    background-color: #4586B3;
+    cursor: pointer;
+}
+.container a {
+    width: 30%;
+    text-decoration: none;
+    color: #000000;
+}
+.container a button:hover {
+    background-color: #000000;
+    color: #05ffc1;
+}
+
+/*error page style */
+.StatusError{
+    width: 50%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff3b;
+    backdrop-filter: blur(18px);
+    border-radius: 12px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.Status {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+.Status span {
+    color: #000000;
+    font-weight: 900;
+    font-size: 2rem;
+    margin: 0px 10px;
+    border-right: 2px solid black;
+}
+.BackHome {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+.BackHome a {
+    width: 50%;
+    font-weight: 700;
+    font-size: 1rem;
+    margin: 10px 0;
+    padding: 10px;
+    color: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 8px;
+}
+
+
+/* Responsive */
+
+@media screen and (max-width: 768px) {
+    .box {
+        width: 100%;
+    }
+    textarea {
+        width: 100%;
+    }
+    select {
+        width: 100%;
+    }
+    form button {
+        width: 100%;
+    }
+    .container {
+        width: 100%;
+    }
+    .container a {
+        width: 100%;
+    }
+    .StatusError {
+        width: 100%;
+    }
+    .BackHome {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
 }
