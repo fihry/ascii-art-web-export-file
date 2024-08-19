@@ -4,7 +4,6 @@ import (
 	"html/template"
 	"log"
 	"net/http"
-	"os"
 	"path/filepath"
 )
 
@@ -24,8 +23,6 @@ var StatusError = struct {
 	Status: "OK",
 	Code:   200,
 }
-
-var FilePath = "download/file.txt"
 
 func renderTemplate(w http.ResponseWriter, tmpl string, data interface{}) {
 	tmplPath := filepath.Join("web/template", tmpl)
@@ -99,31 +96,15 @@ func DownloadHandler(w http.ResponseWriter, r *http.Request) {
 		renderTemplate(w, "Error.html", StatusError)
 		return
 	}
-
-	
-// KHASNNA NJIBO L CONTENT 
-
-
-// JUST FOR TESTING
-	if Data.Content == "" {
-		StatusError.Status = "No Content"
-		StatusError.Code = http.StatusNoContent
-		renderTemplate(w, "Error.html", StatusError)
+	Content := r.URL.Query().Get("content")
+	if len(Content) == 0 {
+		Data.Warning = "Type some text and click on the 'generate' button."
+		http.Redirect(w, r, "/", http.StatusSeeOther)
 		return
 	}
-// END
-	err := os.WriteFile(FilePath, []byte(Data.Content), 0644)
-	if err != nil {
-		http.Error(w, "500 Internal Server Error", http.StatusInternalServerError)
-		log.Println("Error writing file:", err)
-		return
-	}
-
 	w.Header().Set("Content-Disposition", "attachment; filename=file.txt")
 	w.Header().Set("Content-Type", "text/plain")
-	http.ServeFile(w, r, FilePath)
+	w.Write([]byte(Content))
+	http.Redirect(w, r, "/", http.StatusSeeOther)
 
-	if err := os.Remove(FilePath); err != nil {
-		log.Println("Error removing file:", err)
-	}
 }
