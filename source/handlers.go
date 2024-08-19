@@ -5,6 +5,7 @@ import (
 	"log"
 	"net/http"
 	"path/filepath"
+	"strconv"
 )
 
 var Data = struct {
@@ -103,6 +104,7 @@ func DownloadHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	w.Header().Set("Content-Disposition", "attachment; filename=file.txt")
+	w.Header().Set("Content-length", strconv.Itoa(len(Content)))
 	w.Header().Set("Content-Type", "text/plain")
 	w.Write([]byte(Content))
 	http.Redirect(w, r, "/", http.StatusSeeOther)
