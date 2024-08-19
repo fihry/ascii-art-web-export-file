@@ -106,5 +106,4 @@ func DownloadHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "text/plain")
 	w.Write([]byte(Content))
 	http.Redirect(w, r, "/", http.StatusSeeOther)
-
 }

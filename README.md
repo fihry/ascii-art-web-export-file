@@ -38,8 +38,15 @@ Guidelines for contributing to your project:
 3. Submit a pull request with a detailed description of your changes.
 
 ## Contributors
-- [mouchkhi](https://learn.zone01oujda.ma/git/mouchkhi)
-- [melfihry](https://learn.zone01oujda.ma/git/melfihry)
+<a href="https://learn.zone01oujda.ma/git/mouchkhi">
+  <img src="https://learn.zone01oujda.ma/git/avatars/9ce3a9edc9051590107688e9c37712f6?size=870" title="Mohammed Ouchkhi" width="40"height="40"/>
+  Mohammed Ouchkhi
+</a>
+
+<a href="https://learn.zone01oujda.ma/git/melfihry">
+  <img src= "https://learn.zone01oujda.ma/git/avatars/bd73c7d74b95688c13987e4c35053a31?size=870" title="Mohamed El-fihry" width="40"height="40" />
+  Mohammed El-Fihry
+</a>
 
 ## Acknowledgements
 

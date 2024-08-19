@@ -16,7 +16,7 @@ func IsEmpty(slice []string) bool {
 }
 
 func IsBanner(banner string) bool {
-	return banner == "standard" || banner == "shadow" || banner == "thinkertoy"
+	return banner == "standard" || banner == "shadow" || banner == "thinkertoy" || banner == "enigma" || banner == "nirvana"
 }
 
 func IsPrintable(s string) bool {

@@ -92,7 +92,7 @@ textarea {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 .Error {
-    color: #ff0f0f88;
+    color: #ff3333;
     font-size: 1rem;
     font-weight: 700;
 }
